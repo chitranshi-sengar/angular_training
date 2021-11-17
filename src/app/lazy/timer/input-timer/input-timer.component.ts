@@ -15,7 +15,7 @@ export class InputTimerComponent implements OnInit {
 
   ngOnInit() {}
 
-  startPauseTimer(value: string) {
+  startPauseTimer(value: string | number) {
     if (value) {
       this.start = !this.start;
       if (this.start) {
