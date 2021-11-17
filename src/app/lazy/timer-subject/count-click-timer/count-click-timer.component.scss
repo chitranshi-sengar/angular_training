@@ -1,0 +1,13 @@
+:host {
+    width: 50%;
+}
+.main {
+    display: flex;
+    .container {
+        margin: 5px;
+        .value {
+            font-size: 22px;
+            font-weight: 600;
+        }
+    }
+}
