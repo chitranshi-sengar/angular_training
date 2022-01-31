@@ -40,6 +40,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'angular14'
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5122A25D9D2F444EAD7518DD72ABA8B8 }}
-          package: .
+          package: ./dist/angular-training
