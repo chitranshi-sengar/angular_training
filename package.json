@@ -3,7 +3,8 @@
   "version": "0.2.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "pm2 start 'ng serve'",
+    "stop": "pm2 stop all",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -30,6 +31,7 @@
     "@ngrx/effects": "^8.6.1",
     "@ngrx/store": "^8.6.1",
     "core-js": "^2.5.4",
+    "pm2": "^5.1.2",
     "rxjs": "~6.5.2",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
