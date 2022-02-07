@@ -1,4 +1,31 @@
-<div class="border p-2">
+<!-- {{data | json}} -->
+<label>Description: </label>
+<input [(ngModel)]="description">
+<input type="radio" value="true" name="isDone" [(ngModel)]="isDone"> Yes
+<input type="radio" value="false" name="isDone" [(ngModel)]="isDone"> No
+<button (click)="addData()">Add Data</button>
+<div class="main-container">
+  <div *ngFor="let data of data$ | async" [ngStyle]="{ width: grid ? '25%' : '50%' }">
+    <div class="item">
+      <div>Id: {{ data.id }}</div>
+      <div>Created On: {{ data.createdOn }}</div>
+      <div *ngIf="!isEdit[data.id]">Description: {{ data.description }}</div>
+      <input [(ngModel)]="descriptionEdit" *ngIf="isEdit[data.id]">
+      <div *ngIf="!isEdit[data.id]">Is Done: {{ data.isDone === true ? 'Yes' : 'No' }}</div>
+      <div *ngIf="isEdit[data.id]">
+        <input type="radio" value="true" name="isDoneEdit" [(ngModel)]="isDoneEdit"> Yes
+        <input type="radio" value="false" name="isDoneEdit" [(ngModel)]="isDoneEdit"> No
+      </div>
+      <div>
+        <button (click)="deleteData(data.id)">Delete</button>
+        <button (click)="editData(data)" *ngIf="!isEdit[data.id]">Edit</button>
+        <button (click)="updateData(data.id)" *ngIf="isEdit[data.id]">Save</button>
+        <button (click)="cancelEditData()" *ngIf="isEdit[data.id]">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="border p-2">
   <div class="border p-2">
     <div class="border p-2">
       <div class="border p-2">
@@ -16,4 +43,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

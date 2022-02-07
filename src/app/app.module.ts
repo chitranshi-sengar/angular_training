@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { AzureFunService } from './services/azurefun.services';
 import { ProductsService } from './services/products.services';
 // import { StudentsService } from './services/students.services';
 import { TimerService } from './services/timer.services';
@@ -23,6 +24,7 @@ import { StudentsReducer } from './store/reducers/students.reducer';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     CoreModule,
     HttpClientModule,
     FormsModule,  
@@ -35,7 +37,7 @@ import { StudentsReducer } from './store/reducers/students.reducer';
       ProductsEffects, StudentsEffects
     ])
   ],
-  providers: [ProductsService, TimerService],
+  providers: [ProductsService, TimerService, AzureFunService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

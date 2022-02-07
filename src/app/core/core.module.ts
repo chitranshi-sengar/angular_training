@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { FooterComponent } from './components/footer/footer.component';
@@ -9,7 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   declarations: [
     HeaderComponent,
